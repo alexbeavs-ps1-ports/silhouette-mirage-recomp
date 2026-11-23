@@ -1,0 +1,98 @@
+{
+  "format_version": 1,
+  "id": "silhouette-mirage-psx",
+  "name": "Silhouette Mirage",
+  "kind": "recomp",
+  "platform": "psx",
+  "source_repo": "silhouette-mirage-recomp",
+  "rom_identity": {
+    "crc32": [
+      "bedcdbfa"
+    ],
+    "md5": [
+      "916eab42e8b05a1425a86156c1ed2b78"
+    ],
+    "sha1": [
+      "9e37436575aac7454f6e113aa22fdbf2ab235773"
+    ],
+    "disc_serials": [
+      "SLUS-00728"
+    ],
+    "sizes": [
+      300218688
+    ],
+    "filenames": [
+      "Silhouette Mirage (USA).cue",
+      "Silhouette Mirage (USA) (Track 1).bin"
+    ],
+    "track_counts": [
+      26
+    ],
+    "disc_fps": [
+      "ca43dd5db82f52fe578e69e656b688071333c690d0c74fed40a727f91328f74e"
+    ],
+    "require_cue": true
+  },
+  "rom_extensions": [
+    ".cue",
+    ".bin",
+    ".chd"
+  ],
+  "bios_identity": {
+    "required": true,
+    "name": "SCPH1001.BIN",
+    "profile": "SCPH1001",
+    "crc32": [
+      "37157331"
+    ],
+    "md5": [
+      "924e392ed05558ffdb115408c263dccf"
+    ],
+    "sha1": [
+      "10155d8d6e6e832d6ea66db9bc098321fb5e8ebf"
+    ],
+    "sha256": [
+      "71af94d1e47a68c11e8fdb9f8368040601514a42a5a399cda48c7d3bff1e99d3"
+    ],
+    "sizes": [
+      524288
+    ],
+    "filenames": [
+      "SCPH1001.BIN"
+    ]
+  },
+  "release": {
+    "github": "alexbeavs-ps1-ports/silhouette-mirage-recomp",
+    "allow_prerelease": false,
+    "asset_glob": {
+      "windows-x64": "silhouette-mirage-*-windows-x64.zip",
+      "linux-x64": "silhouette-mirage-*-linux-x64.zip",
+      "macos-arm64": "silhouette-mirage-*-macos-arm64.zip",
+      "macos-x64": "silhouette-mirage-*-macos-x64.zip"
+    }
+  },
+  "launch": {
+    "windows": "silhouette_mirage.exe",
+    "linux": "silhouette_mirage",
+    "macos": "silhouette_mirage"
+  },
+  "build": {
+    "source": {
+      "github": "alexbeavs-ps1-ports/silhouette-mirage-recomp",
+      "ref": ""
+    },
+    "toolchain": {
+      "id": "cmake-clang-v1",
+      "min_version": "1.0.14"
+    },
+    "generate": {
+      "engine": "psxrecomp",
+      "config": "game.toml"
+    },
+    "cmake": {
+      "build_dir": "build",
+      "target": "psx-runtime",
+      "config": "Release"
+    }
+  }
+}
